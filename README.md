@@ -1,23 +1,36 @@
 # Projeto Final - Semestre 1
 
-## Objetivo
+## Análise Exploratória de Dados da Base HR
 
-Realizar uma análise exploratória de dados utilizando a base HR do FreeSQL, aplicando consultas SQL, análise com Python e visualizações gráficas.
+**Aluno:** Stefano Laurito
 
-## Tecnologias utilizadas
+---
+
+# Objetivo
+
+Desenvolver um projeto de Análise Exploratória de Dados (EDA) utilizando a base Human Resources (HR) do FreeSQL.
+
+O projeto contempla consultas SQL com múltiplos LEFT JOIN, exportação dos dados para CSV, análise utilizando Python/Pandas e geração de gráficos estatísticos para apoiar a interpretação dos dados.
+
+---
+
+# Tecnologias Utilizadas
 
 - SQL
 - FreeSQL
-- Python
+- Python 3
 - Pandas
 - Matplotlib
 - Git
 - GitHub
+- Visual Studio Code
 
-## Estrutura do projeto
+---
+
+# Estrutura do Projeto
 
 ```
-projeto_final_s1
+projeto_final_s1/
 │
 ├── consultas/
 │   ├── query1.sql
@@ -26,39 +39,134 @@ projeto_final_s1
 │   └── query2.csv
 │
 ├── graficos/
+│   ├── salario_medio_departamento.png
+│   ├── funcionarios_departamento.png
+│   ├── funcionarios_regiao.png
+│   ├── histograma_salarios.png
+│   └── boxplot_salarios.png
 │
 ├── projeto_final_s1.py
 │
 └── README.md
 ```
 
-## Consultas SQL
+---
 
-Foram desenvolvidas duas consultas utilizando LEFT JOIN:
+# Consultas SQL
 
-- Query 1: Salários por Departamento e Cargo.
-- Query 2: Funcionários por Região e Localização.
+## Query 1
 
-## Principais resultados
+Relaciona as tabelas:
 
-- Foram analisados 106 funcionários.
-- Salário médio: R$ 6.456,75.
-- Maior salário: R$ 24.000,00.
-- Menor salário: R$ 2.100,00.
+- EMPLOYEES
+- DEPARTMENTS
+- JOBS
+
+Objetivo:
+
+Analisar os salários dos funcionários de acordo com seus departamentos e cargos.
+
+Foi utilizado:
+
+- LEFT JOIN
+- WHERE
+
+---
+
+## Query 2
+
+Relaciona as tabelas:
+
+- EMPLOYEES
+- DEPARTMENTS
+- LOCATIONS
+- COUNTRIES
+- REGIONS
+
+Objetivo:
+
+Analisar a distribuição geográfica dos funcionários juntamente com suas informações salariais.
+
+Foi utilizado:
+
+- LEFT JOIN
+- WHERE
+
+---
+
+# Etapas da Análise em Python
+
+Durante a análise exploratória foram realizadas as seguintes etapas:
+
+- Importação dos arquivos CSV;
+- Visualização inicial dos dados;
+- Verificação da estrutura dos DataFrames;
+- Identificação de valores nulos;
+- Verificação de registros duplicados;
+- Estatísticas descritivas dos salários;
+- Agrupamentos por departamento, cargo, país e região;
+- Geração de gráficos para análise visual;
+- Conclusões finais.
+
+---
+
+# Principais Resultados
+
+- Total de funcionários analisados: **106**
+- Salário médio: **R$ 6.456,75**
+- Mediana salarial: **R$ 6.150,00**
+- Maior salário: **R$ 24.000,00**
+- Menor salário: **R$ 2.100,00**
 - Executive apresentou a maior média salarial.
-- Shipping possui a maior quantidade de funcionários.
-- A região Americas concentra a maior parte dos funcionários.
-- Foi encontrado apenas um valor nulo na coluna STATE_PROVINCE.
+- Shipping possui o maior número de funcionários.
+- A região Americas concentra a maior parte dos colaboradores.
+- Apenas um registro apresentou valor nulo na coluna **STATE_PROVINCE**.
 - Não foram encontrados registros duplicados.
 
-## Gráficos
+---
 
-Foram gerados os seguintes gráficos:
+# Visualizações Geradas
+
+Foram produzidos os seguintes gráficos:
 
 - Salário Médio por Departamento
 - Quantidade de Funcionários por Departamento
 - Funcionários por Região
+- Histograma da Distribuição dos Salários
+- Boxplot dos Salários
 
-## Autor
+---
 
-Stefano Laurito
+# Como Executar
+
+1. Clonar o repositório.
+2. Instalar as bibliotecas necessárias:
+
+```bash
+pip install pandas matplotlib
+```
+
+3. Executar:
+
+```bash
+python projeto_final_s1.py
+```
+
+---
+
+# Melhorias Futuras
+
+Como evolução do projeto, podem ser implementadas:
+
+- Dashboards interativos com Power BI ou Plotly;
+- Novas métricas estatísticas;
+- Filtros dinâmicos;
+- Integração direta com banco de dados, eliminando a necessidade de exportação manual dos arquivos CSV.
+
+---
+
+# Autor
+
+**Stefano Laurito**
+
+Projeto desenvolvido para a disciplina de Visualização de Dados e Business Intelligence.
