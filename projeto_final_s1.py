@@ -209,8 +209,6 @@ plt.title("Salário Médio por Departamento")
 plt.ylabel("Departamento")
 plt.xlabel("Salário Médio")
 
-plt.xticks(rotation=45, ha="right")
-
 plt.tight_layout()
 
 plt.savefig("graficos/salario_medio_departamento.png")
@@ -231,8 +229,6 @@ for i, v in enumerate(funcionarios_departamento):
 plt.title("Quantidade de Funcionários por Departamento")
 plt.ylabel("Departamento")
 plt.xlabel("Quantidade")
-
-plt.xticks(rotation=45, ha="right")
 
 plt.tight_layout()
 
@@ -309,12 +305,18 @@ print("\n" + "=" * 60)
 print("CONCLUSÕES DA ANÁLISE")
 print("=" * 60)
 
-print("- Foram analisados 106 funcionários da base HR.")
+print(f"- Foram analisados {quantidade} funcionários da base HR.")
 print(f"- O salário médio encontrado foi de R$ {media:.2f}.")
 print(f"- O maior salário foi de R$ {maior} e o menor de R$ {menor}.")
-print("- O departamento Executive apresentou a maior média salarial.")
+
+departamento_maior = salario_departamento.idxmax()
+print(f"- O departamento {departamento_maior} apresentou a maior média salarial.")
+
 print("- O departamento Shipping concentra a maior quantidade de funcionários.")
-print("- A maior parte dos funcionários está localizada na região Americas.")
+
+regiao_maior = funcionarios_regiao.idxmax()
+print(f"- A maior parte dos funcionários está localizada na região {regiao_maior}.")
+
 print("- Foi identificado apenas um valor nulo na coluna STATE_PROVINCE.")
 print("- Não foram encontrados registros duplicados.")
 
