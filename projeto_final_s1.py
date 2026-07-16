@@ -261,6 +261,46 @@ plt.savefig("graficos/funcionarios_regiao.png")
 
 plt.show()
 
+
+# Gráfico 4 - Histrograma da Distribuição dos Salários
+
+plt.figure(figsize=(10,6))
+
+plt.hist(
+    df_salarios["SALARY"],
+    bins=10,
+    edgecolor="black"
+)
+
+plt.title("Distribuição dos Salários")
+plt.xlabel("Salário")
+plt.ylabel("Quantidade de Funcionários")
+
+plt.tight_layout()
+
+plt.savefig("graficos/histograma_salarios.png")
+
+plt.show()
+
+
+# Gráfico 5 - Boxplot dos Salários
+
+plt.figure(figsize=(8,6))
+
+plt.boxplot(
+    df_salarios["SALARY"],
+    vert=True
+)
+
+plt.title("Boxplot dos Salários")
+plt.ylabel("Salário")
+
+plt.tight_layout()
+
+plt.savefig("graficos/boxplot_salarios.png")
+
+plt.show()
+
 # =====================================================
 # ETAPA 9 - CONCLUSÕES
 # =====================================================
