@@ -1,18 +1,14 @@
 # Projeto Final - Semestre 1
+Situação de Aprendizagem (Projeto Avaliativo) - Módulo1 - Semana 13
 
-## Análise Exploratória de Dados da Base HR
-
-**Aluno:** Stefano Laurito
-
----
+Turma: Visualização de Dados e Business Intelligence [T2]
+Aluno: Stefano Laurito
 
 # Objetivo
 
 Desenvolver um projeto de Análise Exploratória de Dados (EDA) utilizando a base Human Resources (HR) do FreeSQL.
 
 O projeto contempla consultas SQL com múltiplos LEFT JOIN, exportação dos dados para CSV, análise utilizando Python/Pandas e geração de gráficos estatísticos para apoiar a interpretação dos dados.
-
----
 
 # Tecnologias Utilizadas
 
@@ -43,18 +39,16 @@ projeto_final_s1/
 │   ├── funcionarios_departamento.png
 │   ├── funcionarios_regiao.png
 │   ├── histograma_salarios.png
-│   └── boxplot_salarios.png
+│   └── boxplot_departamentos.png
 │
 ├── projeto_final_s1.py
 │
 └── README.md
 ```
 
----
-
 # Consultas SQL
 
-## Query 1
+-- Query 1
 
 Relaciona as tabelas:
 
@@ -71,9 +65,7 @@ Foi utilizado:
 - LEFT JOIN
 - WHERE
 
----
-
-## Query 2
+-- Query 2
 
 Relaciona as tabelas:
 
@@ -91,8 +83,6 @@ Foi utilizado:
 
 - LEFT JOIN
 - WHERE
-
----
 
 # Etapas da Análise em Python
 
@@ -123,17 +113,45 @@ Durante a análise exploratória foram realizadas as seguintes etapas:
 - Apenas um registro apresentou valor nulo na coluna **STATE_PROVINCE**.
 - Não foram encontrados registros duplicados.
 
----
-
 # Visualizações Geradas
 
-Foram produzidos os seguintes gráficos:
+## 1. Salário Médio por Departamento
 
-- Salário Médio por Departamento
-- Quantidade de Funcionários por Departamento
-- Funcionários por Região
-- Histograma da Distribuição dos Salários
-- Boxplot dos Salários
+Este gráfico apresenta a média salarial de cada departamento.
+
+![Salário Médio por Departamento](graficos/salario_medio_departamento.png)
+
+---
+
+## 2. Quantidade de Funcionários por Departamento
+
+Exibe a quantidade de funcionários em cada departamento.
+
+![Funcionários por Departamento](graficos/funcionarios_departamento.png)
+
+---
+
+## 3. Funcionários por Região
+
+Mostra a distribuição dos funcionários entre as regiões.
+
+![Funcionários por Região](graficos/funcionarios_regiao.png)
+
+---
+
+## 4. Histograma da Distribuição dos Salários
+
+Representa a frequência dos salários em diferentes faixas salariais.
+
+![Histograma dos Salários](graficos/histograma_salarios.png)
+
+---
+
+## 5. Boxplot da Distribuição dos Salários por Departamento
+
+Permite comparar a mediana, a dispersão e possíveis outliers dos salários entre os departamentos.
+
+![Boxplot dos Salários por Departamento](graficos/boxplot_departamento.png)
 
 ---
 
@@ -162,11 +180,3 @@ Como evolução do projeto, podem ser implementadas:
 - Novas métricas estatísticas;
 - Filtros dinâmicos;
 - Integração direta com banco de dados, eliminando a necessidade de exportação manual dos arquivos CSV.
-
----
-
-# Autor
-
-**Stefano Laurito**
-
-Projeto desenvolvido para a disciplina de Visualização de Dados e Business Intelligence.
